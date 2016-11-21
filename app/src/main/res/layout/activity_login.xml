@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#fafafa">
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:text="登陆"/>
+    
+    <com.iplant.view.widget.ClearEditText
+        android:id="@+id/account"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="21dp"
+        android:drawableLeft="@drawable/imported_layers_2"
+        android:drawablePadding="19dp"
+        android:padding="11dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:background="@drawable/input"
+        android:hint="账号"
+        android:textColorHint="#959595"/>
+    <com.iplant.view.widget.PwdEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:drawableLeft="@drawable/group_3"
+        android:layout_marginTop="-2dp"
+        android:drawablePadding="19dp"
+        android:padding="11dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:background="@drawable/input"
+        android:hint="密码"
+        android:textColorHint="#959595"
+        android:inputType="textPassword"
+        />    
+        
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:text="登 陆"
+        android:onClick="OnLogin"
+        android:background="@drawable/login"/>
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:clickable="true"
+        android:layout_margin="29dp"
+        android:textColor="#2ea0f6"
+        android:textSize="16sp"
+        android:text="找回密码"
+        android:onClick="onPwdRset"/>
+    
+    <TextView 
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="24dp"
+        android:textColor="#8d8d8d"
+        android:textSize="14sp"
+        />
+</LinearLayout>

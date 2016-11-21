@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        layout="@layout/titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="18dp" >
+
+        <TextView
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="旧密码"
+            android:textColor="#3d3d3d"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.iplant.view.widget.ClearEditText
+            android:id="@+id/oldpwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginLeft="4dp"
+            android:singleLine="true"
+            android:textColor="#3d3d3d"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="18dp" >
+
+        <TextView
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="新密码"
+            android:textColor="#3d3d3d"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.iplant.view.widget.ClearEditText
+            android:id="@+id/newpwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#3d3d3d"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/input"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="18dp" >
+
+        <TextView
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="确定密码"
+            android:textColor="#3d3d3d"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.iplant.view.widget.ClearEditText
+            android:id="@+id/ensurepwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginLeft="4dp"
+            android:singleLine="true"
+            android:textColor="#3d3d3d"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginLeft="18dp"
+        android:gravity="left"
+        android:textColor="#a7a7a7"
+        android:textSize="12sp" 
+        android:text="密码格式：6-20个字母、数字、特殊字符组合"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/login"
+        android:onClick="OnSubmit"
+        android:text="登陆"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+ 	<style name="status_bar" parent="@android:style/Theme.Holo.Light.NoActionBar">
+		<!-- Status Bar -->  
+		<item name="android:windowTranslucentStatus">true</item>  
+		<!-- Navigation Bar -->  
+		<item name="android:windowTranslucentNavigation">false</item> 
+    </style>
+</resources>
