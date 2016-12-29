@@ -7,6 +7,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 import com.iplant.Constant;
+import com.iplant.MyError;
 import com.iplant.R;
 import com.iplant.model.Account;
 import com.iplant.presenter.UpdatePresenter;
@@ -17,7 +18,10 @@ import com.iplant.view.widget.ClearEditText;
 import com.iplant.view.widget.PwdEditText;
 
 import android.Manifest;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.view.View;
@@ -44,7 +48,14 @@ public class LoginActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_login);
-		
+
+		if (Build.VERSION.SDK_INT >= 23) {
+			if(!Settings.canDrawOverlays(this)) {
+				Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+				startActivity(intent);
+			}
+		}
+
 		initView();
 
 		EventBus.getDefault().register(this);
@@ -100,7 +111,14 @@ public class LoginActivity extends BaseActivity {
 	public void onEventMainThread(Account myAccount){
 		closeWaiting();
 		if(!myAccount.isValid()){
-			showMsg("登陆失败，请确认用户名和密码");
+			if (myAccount.errorcode == MyError.DISCONNECT ||
+				myAccount.errorcode == MyError.DNS_RESOLVE ||
+				myAccount.errorcode == MyError.NET ||
+				myAccount.errorcode == MyError.TIMEOUT){
+				showMsg("网络连接超时，请检查网络");
+			}else{
+				showMsg("登陆失败，请确认用户名和密码");
+			}
 		}else{
 			ConfigUtils.saveData(this, null, Constant.KEY_ACCOUNT, myAccount.account);
 			jumpTo(MainActivity.class);

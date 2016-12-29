@@ -21,6 +21,9 @@ import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -99,20 +102,21 @@ public class UpdatePresenter {
 			URL url = new URL(path);
 			HttpURLConnection conn =  (HttpURLConnection) url.openConnection();
 			conn.setConnectTimeout(5000);
+			conn.setReadTimeout(18000);
 			//获取到文件的大小 
-			pd.setMax(conn.getContentLength());
+			pd.setMax(conn.getContentLength() / 1024);
 			InputStream is = conn.getInputStream();
 			File file = new File(Environment.getExternalStorageDirectory(), "updata.apk");
 			FileOutputStream fos = new FileOutputStream(file);
 			BufferedInputStream bis = new BufferedInputStream(is);
-			byte[] buffer = new byte[1024];
+			byte[] buffer = new byte[2048];
 			int len ;
 			int total=0;
 			while((len =bis.read(buffer))!=-1){
 				fos.write(buffer, 0, len);
 				total+= len;
 				//获取当前下载量
-				pd.setProgress(total);
+				pd.setProgress(total / 1024);
 			}
 			fos.close();
 			bis.close();
@@ -151,10 +155,18 @@ public class UpdatePresenter {
 		});
 		AlertDialog dialog = builer.create();
 //		dialog.setCancelable(false);
+		dialog.setCanceledOnTouchOutside(false);
 		dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 		dialog.show();
 	}
-	
+
+	Handler mHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			Toast.makeText(mContext, "下载失败", Toast.LENGTH_LONG).show();
+		}
+	};
+
 	/*
 	 * 从服务器中下载APK
 	 */
@@ -164,7 +176,8 @@ public class UpdatePresenter {
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 		pd.setMessage("正在下载更新");
 		pd.setProgressNumberFormat("%1d kb/%2d kb");
-//		pd.setCancelable(false);
+		pd.setCancelable(false);
+		pd.setCanceledOnTouchOutside(false);
 		pd.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 		pd.setOnDismissListener(new OnDismissListener() {
 			
@@ -174,6 +187,7 @@ public class UpdatePresenter {
 			}
 		});
 		pd.show();
+
 		new Thread(){
 			@Override
 			public void run() {
@@ -185,7 +199,7 @@ public class UpdatePresenter {
 				} catch (Exception e) {
 					mIsShowDialog = false;
 					e.printStackTrace();
-					Toast.makeText(mContext, "下载失败", Toast.LENGTH_LONG).show();
+					mHandler.sendEmptyMessage(0);
 				}
 			}}.start();
 	}
