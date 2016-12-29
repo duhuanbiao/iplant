@@ -154,7 +154,7 @@ public class UpdatePresenter {
 			} 
 		});
 		AlertDialog dialog = builer.create();
-//		dialog.setCancelable(false);
+		dialog.setCancelable(false);
 		dialog.setCanceledOnTouchOutside(false);
 		dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 		dialog.show();
@@ -179,6 +179,13 @@ public class UpdatePresenter {
 		pd.setCancelable(false);
 		pd.setCanceledOnTouchOutside(false);
 		pd.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+		pd.setButton(DialogInterface.BUTTON_NEGATIVE, "取消下载", new OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						android.os.Process.killProcess(android.os.Process.myPid());
+					}
+				}
+		);
 		pd.setOnDismissListener(new OnDismissListener() {
 			
 			@Override
