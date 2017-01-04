@@ -25,6 +25,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -300,5 +301,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
             e.printStackTrace();
         }
         return 0;
+    }
+
+    //处理闪光灯
+    public void onFlash(View v){
+        if (cameraManager != null){
+            cameraManager.flashHandler();
+        }
     }
 }

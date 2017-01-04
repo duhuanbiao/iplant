@@ -45,8 +45,8 @@
         <activity android:name="com.iplant.libzxing.activity.CaptureActivity" 
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         
-        <service android:name="com.iplant.view.service.RefreshService"/>  
-           
+        <service android:name="com.iplant.view.service.RefreshService"/>
+
     </application>
 
 </manifest>
