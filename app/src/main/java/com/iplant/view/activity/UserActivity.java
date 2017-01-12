@@ -88,7 +88,7 @@ public class UserActivity extends BaseActivity {
 	
 	public void onCheckUpdate(View v){
 		showWaiting("正在检测更新");
-		new UpdatePresenter(this).doCheckUpdate();
+		new UpdatePresenter(this.getApplicationContext()).doCheckUpdate();
 	}
 	
 	public void onAbout(View v){

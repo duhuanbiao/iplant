@@ -60,7 +60,7 @@ public class LoginActivity extends BaseActivity {
 
 		EventBus.getDefault().register(this);
 		
-		new UpdatePresenter(this).doCheckUpdate();
+		new UpdatePresenter(this.getApplicationContext()).doCheckUpdate();
 	}
 
 	@Override
