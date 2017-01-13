@@ -218,6 +218,7 @@ public class UpdatePresenter {
 		intent.setAction(Intent.ACTION_VIEW);
 		//执行的数据类型
 		intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		mContext.startActivity(intent);
 	}
 }
