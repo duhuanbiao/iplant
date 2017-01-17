@@ -200,9 +200,10 @@ public class UpdatePresenter {
 			public void run() {
 				try {
 					File file = getFileFromServer(info.getUrl(), pd);
-					sleep(3000);
-					installApk(file);
+					sleep(1000);
 					pd.dismiss(); //结束掉进度条对话框
+					installApk(file);
+					android.os.Process.killProcess(android.os.Process.myPid());
 				} catch (Exception e) {
 					mIsShowDialog = false;
 					e.printStackTrace();
