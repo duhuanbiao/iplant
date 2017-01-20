@@ -41,7 +41,7 @@
         <activity android:name="com.iplant.view.activity.AboutActivity"/>
         <activity android:name="com.iplant.libzxing.activity.CaptureActivity" 
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
-        
+        <activity android:name="com.iplant.view.activity.SelfCloseActivity" android:theme="@android:style/Theme.NoDisplay"/>
         <service android:name="com.iplant.view.service.RefreshService"/>
 
     </application>

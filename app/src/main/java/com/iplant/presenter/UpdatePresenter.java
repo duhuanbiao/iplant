@@ -35,6 +35,7 @@ import com.iplant.model.UpdateInfo;
 import com.iplant.presenter.http.DataFetchListener.JsonListener;
 import com.iplant.presenter.http.DataFetchModule;
 import com.iplant.util.VersionUtils;
+import com.iplant.view.activity.SelfCloseActivity;
 
 public class UpdatePresenter {
 	static final String TAG = "UpdatePresenter";
@@ -58,7 +59,13 @@ public class UpdatePresenter {
 		mContext = c;
 		versionname = VersionUtils.getVersionName(c);
 	}
-	
+
+	public static void closeApp(Context c){
+		Intent i = new Intent(c, SelfCloseActivity.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+		c.startActivity(i);
+	}
+
 	public void doCheckUpdate(){
 		DataFetchModule.getInstance().fetchJsonGet(
 				Constant.DOMAIN + "api/version/last_version?client_info=" + versionname, 
@@ -182,7 +189,7 @@ public class UpdatePresenter {
 		pd.setButton(DialogInterface.BUTTON_NEGATIVE, "取消下载", new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						android.os.Process.killProcess(android.os.Process.myPid());
+						closeApp(mContext);
 					}
 				}
 		);
@@ -203,8 +210,9 @@ public class UpdatePresenter {
 					sleep(1000);
 					pd.dismiss(); //结束掉进度条对话框
 					installApk(file);
-					android.os.Process.killProcess(android.os.Process.myPid());
+					closeApp(mContext);
 				} catch (Exception e) {
+					pd.dismiss();
 					mIsShowDialog = false;
 					e.printStackTrace();
 					mHandler.sendEmptyMessage(0);

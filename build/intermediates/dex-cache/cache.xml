@@ -2,42 +2,6 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_2db58601c7653a5da085d78388019aadb6dab713.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\ormlite-core-4.49.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9a8b276da6dada8141f614d3feba25a0e8589db7">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\ormlite-core-4.49_bb860385309255c5bf7d5eeab880d147959d68ca.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_876dd203187b07eea22d60ff1d5474aa1e243ea9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\universal-image-loader-1.9.5.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_ba01a3df96fe40544be26239e769b28a68a8b573.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="E:\tmp\iplant\app\libs\ormlite-android-4.49.jar"
         jumboMode="true"
@@ -92,13 +56,13 @@
         <dex dex="E:\tmp\iplant\app\build\intermediates\pre-dexed\release\ormlite-core-4.49_2b7da500cba96d758d5a09a7d31d8aedfae2ad80.jar" />
     </item>
     <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\volley-20160803.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="E:\workspace_private\iplant\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="34338971787a6c06dc86537457485cb674ac1fc9">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\volley-20160803_5d1ebf0f47a729598ca737650b9a6c6619089196.jar" />
+        sha1="f91a8bdb7d1d4c08b31b4c79f415140e6e37712c">
+        <dex dex="E:\workspace_private\iplant\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_1f9b5bc672e93b4df25ed45ccf6e7a66e8095ea0\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -128,15 +92,6 @@
         <dex dex="E:\tmp\iplant\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.5_78f81b5c23fcc5f3f5a3be4381f28f5ac26af558\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\butterknife-7.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1_60575d0997b19d834e6a60414e200fae5bde3c0f.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="E:\tmp\iplant\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
         jumboMode="true"
@@ -144,15 +99,6 @@
         revision="25.0.0"
         sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
         <dex dex="E:\tmp\iplant\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_98474d000099d6312ad30ee89254945c03d3eb00\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\ormlite-android-4.49.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ecfae85e17f2472852fa8298952f9d52f6a6bfa4">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\ormlite-android-4.49_efb15c1675ba6792216fe49ac78e7c9b249abe00.jar" />
     </item>
     <item
         is-multidex="false"
@@ -219,30 +165,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\persistence-api-1.0.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="8a7f96961047da52a53b7347b6a919c6fbc6d7fa">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\persistence-api-1.0.2_a9362a58c373cbeef0f87c98447a2e2f65d00b2c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="E:\tmp\iplant\app\libs\eventbus-3.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="2e797a05da4f73b51768d1489648f477c6143bed">
         <dex dex="E:\tmp\iplant\app\build\intermediates\pre-dexed\release\eventbus-3.0.0_0ddda8c33d7bf43edd4ee5e6b416f388d8c1d557.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\zxing.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="6fe22c135f19470d05b0816d5996c442ef67da3f">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\zxing_0bf7ed2b864a1b9b6722d43c9c41af471d476288.jar" />
     </item>
     <item
         is-multidex="false"
@@ -270,15 +198,6 @@
         revision="25.0.0"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
         <dex dex="E:\tmp\iplant\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_46c61dbbac14093856c440f8d3ea66e48d864a92\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\workspace_private\iplant\app\libs\eventbus-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="2e797a05da4f73b51768d1489648f477c6143bed">
-        <dex dex="E:\workspace_private\iplant\app\build\intermediates\pre-dexed\debug\eventbus-3.0.0_91a9555435ca18371f1bc83300fef57dce753fa0.jar" />
     </item>
     <item
         is-multidex="false"
